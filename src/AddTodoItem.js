@@ -12,7 +12,7 @@ export default class AddTodoItem extends React.Component {
     let task = element.value
     if (!task) {
       notification.open({
-        description: 'Todo内容不得为空！',
+        description: 'You need something to do with',
     });
     } else {
       this.props.saveNewItem(task)
@@ -24,7 +24,7 @@ export default class AddTodoItem extends React.Component {
       <div className="addtodoitem">
         <Form.Item>
           <label htmlFor="newItem"></label>
-          <Input id="newItem" ref="newItem" type="text" placeholder="吃饭睡觉打豆豆~"></Input>
+          <Input id="newItem" ref="newItem" type="text" placeholder="Add new todo here"></Input>
           <Button type="primary" className="pull-right" onClick={this.saveNewItem}>保存</Button>
         </Form.Item>
       </div>

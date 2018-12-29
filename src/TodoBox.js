@@ -2,6 +2,11 @@ import React from 'react';
 import TodoList from './TodoList';
 import AddTodoItem from './AddTodoItem';
 import {Button, Icon, Row, Col} from 'antd';
+
+
+var counter = 3;
+
+
 export default class TodoBox extends React.Component {
   constructor(props) {
     super(props)
@@ -9,19 +14,15 @@ export default class TodoBox extends React.Component {
       data: [
         {
           "id": "1",
-          "task": "做一个TodoList Demo",
-          "complete": "false"
+          "task": "Familiarize with reactjs",
+          "complete": "true"
         }, {
           "id": "2",
-          "task": "学习ES6",
+          "task": "Familiarize  with WIT.ai",
           "complete": "false"
         }, {
           "id": "3",
-          "task": "Hello React",
-          "complete": "true"
-        }, {
-          "id": "4",
-          "task": "找工作",
+          "task": "Familiarize with redux",
           "complete": "false"
         }
       ]
@@ -30,13 +31,17 @@ export default class TodoBox extends React.Component {
     this.handleTaskDelete = this.handleTaskDelete.bind(this);
     this.handleAddTodoItem = this.handleAddTodoItem.bind(this);
   }
-  generateGUID() {
-    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-      var r = Math.random() * 16 | 0,
-        v = c == 'x' ? r : (r & 0x3 | 0x8)
-      return v.toString(16)
-    })
-  }
+
+
+
+
+  // generateGUID() {
+  //   return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+  //     var r = Math.random() * 16 | 0,
+  //       v = c == 'x' ? r : (r & 0x3 | 0x8)
+  //     return v.toString(16)
+  //   })
+  // }
   handleToggleComplete(taskId) {
     let data = this.state.data;
     for (let item of data) {
@@ -52,11 +57,14 @@ export default class TodoBox extends React.Component {
     this.setState({data})
   }
   handleAddTodoItem(task) {
+    counter+=1;
+
     let newItem = {
-      id: this.generateGUID(),
+      id: counter,
       task,
       complete: "false"
     }
+    console.log(newItem.id);
     let data = this.state.data
     data = data.concat([newItem])
     this.setState({data})
@@ -72,11 +80,11 @@ export default class TodoBox extends React.Component {
         <Row>
           <Col span={12}></Col>
           <Col span={12}>
-            <Button className="pull-left"><Icon type="user"/>
-              <a href="http://axuebin.com">axuebin</a>
+            <Button className="pull-left"><Icon type="github"/>
+              <a href="http://github.com/WilliamMaa">WilliamMaa</a>
             </Button>
             <Button className="pull-right"><Icon type="github"/>
-              <a href="https://github.com/axuebin">axuebin</a>
+              <a href="https://github.com/Valkyriean">Valkyriean</a>
             </Button>
           </Col>
         </Row>
