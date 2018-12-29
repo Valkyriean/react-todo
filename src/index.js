@@ -1,12 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+var React = require('react');
+var ReactDOM = require('react-dom');
+import TodoBox from './components/todobox';
+import './../css/index.css';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+export default class Index extends React.Component {
+  constructor(){
+    super();
+  };
+  render() {
+    return (
+        <TodoBox />
+    );
+  }
+}
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: http://bit.ly/CRA-PWA
-serviceWorker.unregister();
+ReactDOM.render(<Index/>,document.getElementById("example"))
