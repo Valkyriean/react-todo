@@ -1,7 +1,8 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
-import TodoBox from './components/todobox';
-import './../css/index.css';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import TodoBox from './TodoBox';
+import * as serviceWorker from './serviceWorker';
+
 
 export default class Index extends React.Component {
   constructor(){
@@ -15,3 +16,4 @@ export default class Index extends React.Component {
 }
 
 ReactDOM.render(<Index/>,document.getElementById("example"))
++serviceWorker.unregister();
