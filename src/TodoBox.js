@@ -1,6 +1,6 @@
 import React from 'react';
-import TodoList from './todolist';
-import AddTodoItem from './addtodoitem';
+import TodoList from './TodoList';
+import AddTodoItem from './AddTodoItem';
 import {Button, Icon, Row, Col} from 'antd';
 export default class TodoBox extends React.Component {
   constructor(props) {
